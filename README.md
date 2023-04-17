@@ -21,8 +21,9 @@ Hosting a static website on the cloud has become a popular choice for many indiv
 
 
 
-In this project, I will be focusing on how to host a static website on S3 and link it to a domain name purchased from GoDaddy.com. Additionally, we'll be using Amazon Route 53 to create a hosted zone for our domain name, which will allow us to map our domain name to the S3 bucket hosting our website.
+In this project, I will be focusing on how to host a static website on S3 and link it to a domain name (qerbros.com) purchased from GoDaddy.com. Additionally, I will be using Amazon Route 53 to create a hosted zone for our domain name, which will allow us to map our domain name to the S3 bucket hosting our website.
 
-This project will provide you with a step-by-step guide to creating and configuring your S3 bucket, setting up your hosted zone on Route 53, and linking the two together to create a functional website. We'll also cover some best practices for optimizing your website's performance and security on AWS.
+This project will provide you with a step-by-step guide to creating and configuring your S3 bucket, setting up your hosted zone on Route 53, and linking the two together to create a functional website.
 
-Whether you're a developer looking to learn more about cloud hosting or a business owner seeking a reliable and cost-effective hosting solution, this project is an excellent starting point. So, let's get started and build a great static website on AWS!
+
+## Setting up S3 bucket for hosting the static website
