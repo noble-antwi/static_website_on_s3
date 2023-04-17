@@ -21,9 +21,41 @@ Hosting a static website on the cloud has become a popular choice for many indiv
 
 
 
-In this project, I will be focusing on how to host a static website on S3 and link it to a domain name (qerbros.com) purchased from GoDaddy.com. Additionally, I will be using Amazon Route 53 to create a hosted zone for our domain name, which will allow us to map our domain name to the S3 bucket hosting our website.
+In this project, I will be focusing on how to host a static website on S3 and link it to a domain name [qerbos.com](qerbros.com) purchased from [GoDaddy.com](GoDaddy.com.) Additionally, I will be using Amazon Route 53 to create a hosted zone for our domain name, which will allow us to map our domain name to the S3 bucket hosting our website.
 
 This project will provide you with a step-by-step guide to creating and configuring your S3 bucket, setting up your hosted zone on Route 53, and linking the two together to create a functional website.
 
 
 ## Setting up S3 bucket for hosting the static website
+A series of processes were caried out in setting up the S3 for this purpose.
+1. Log in to your AWS account and navigate to the S3 console. ![S3 Console](images\aws_images\s3_console.PNG)
+2. Click the "Create bucket" button and enter a unique name for your bucket, this case it is qerbros.com since the bucket name must match the domain name. 
+![qerbros_bucket_name](images\aws_images\bucket_name.PNG). In creating the bucket, all settings were left to be deafult. The region of choice is US East (N. Virginia) us-east-1 as seen in the image above.
+3. Upload the website files into the bucket as seen below
+![qerbros_bucket_name](images\aws_images\web_file.PNG)
+4. Uder the properties tab, Click on "Static website hosting" and choose "Use this bucket to host a website  after clicking the edit option. ![qerbros_bucket_name](images\aws_images\static.PNG)
+Under the edit button, I indicated the landing page of my website which is the index.html file. I did not use an error file in this project hence was left blanl.
+![qerbros_bucket_name](images\aws_images\index.PNG)
+5. Under the permissions menu, public access is enabled for the backet.![qerbros_bucket_name](images\aws_images\public.PNG)
+ A bucket policy was then created. The policy is as witten bellow
+ ```
+ {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::qerbros.com/*"
+        }
+    ]
+}
+```
+The object ownership was changed to ACLs enabled
+![qerbros_bucket_name](images\aws_images\acl.PNG)
+
+Access Control List was edited to suit the project as indicated below
+![qerbros_bucket_name](images\aws_images\Control.PNG)
+
+
