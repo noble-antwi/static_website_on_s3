@@ -1,1 +1,1 @@
-# static_website_on_s3
+# STATIC WEBSITE ON AWS SIMPLE STORAGE SERVICE (S3)
