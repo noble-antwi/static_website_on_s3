@@ -110,4 +110,27 @@ Since my domain name was bought on Godaddy, I set these NS values in the GoDaddy
 ![route53_dashboard](images\aws_images\godaddy.PNG)
 
 
+## Video Demonstration Demonstration
+
+[Project Demo](videos/project_demo.mp4)
+
+## Conclusion
+In conclusion, hosting a static website on AWS using S3 and Route 53 is a cost-effective and scalable solution that can provide high availability, reliability, and performance. With S3, you can store and distribute your website content to users around the world with low latency and high throughput. With Route 53, you can manage your domain name system and route traffic to your web applications, providing a seamless user experience.
+
+To optimize your static website hosting experience on AWS, here are some recommendations:
+
+* Enable caching and compression: By enabling caching and compression, you can improve the performance and reduce the cost of hosting your static website on S3. This can be achieved by configuring the appropriate metadata headers on your S3 objects.
+
+* Use CloudFront: CloudFront is a content delivery network (CDN) offered by AWS that can help improve the performance and reduce the latency of your static website by caching your content in edge locations around the world.
+
+* Implement security best practices: When hosting your static website on S3, it's important to implement security best practices to protect your website content and users' data. This includes configuring S3 bucket policies, setting up access control, and enabling SSL/TLS encryption.
+
+* Monitor your website: It's important to monitor your website to ensure that it's always available and performing optimally. This can be achieved by setting up health checks and monitoring tools such as AWS CloudWatch.
+
+By following these recommendations, you can ensure that your static website hosting on AWS is reliable, scalable, and cost-effective.
+
+
+
+
+
 
