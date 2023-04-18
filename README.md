@@ -1,7 +1,8 @@
 # HOSTING STATIC WEBSITE ON AWS SIMPLE STORAGE SERVICE (S3)
 
 ## Architecture Diagram
-![Architecture](images\aws_images\architecture.PNG)
+![Architecture](images/aws_images/architecture.PNG)
+
 [Click Here ](https://drive.google.com/file/d/1RThadyvBUDHQ9Iq3EfiYAybB2DizmtJi/view?usp=sharing) to have access to he architectural diagram
 
 ## Introduction
