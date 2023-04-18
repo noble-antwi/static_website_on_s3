@@ -1,7 +1,10 @@
 # HOSTING STATIC WEBSITE ON AWS SIMPLE STORAGE SERVICE (S3)
 
 ## Architecture Diagram
-![Architecture](images/aws_images/architecture.PNG)
+
+
+![architecture](https://user-images.githubusercontent.com/34815693/232652445-d9808091-d468-455d-bd99-d079b526a183.png)
+
 
 [Click Here ](https://drive.google.com/file/d/1RThadyvBUDHQ9Iq3EfiYAybB2DizmtJi/view?usp=sharing) to have access to he architectural diagram
 
@@ -38,12 +41,20 @@ This project will provide you with a step-by-step guide to creating and configur
 A series of processes were caried out in setting up the S3 for this purpose.
 1. Log in to your AWS account and navigate to the S3 console. ![S3 Console](images\aws_images\s3_console.PNG)
 2. Click the "Create bucket" button and enter a unique name for your bucket, this case it is qerbros.com since the bucket name must match the domain name. 
-![qerbros_bucket_name](images\aws_images\bucket_name.PNG). In creating the bucket, all settings were left to be deafult. The region of choice is US East (N. Virginia) us-east-1 as seen in the image above.
+![bucket_name](https://user-images.githubusercontent.com/34815693/232652616-c2cab426-277e-4d72-a11f-b80ff42c3db7.PNG)
+
+
+
+In creating the bucket, all settings were left to be deafult. The region of choice is US East (N. Virginia) us-east-1 as seen in the image above.
 3. Upload the website files into the bucket as seen below
-![web_files](images\aws_images\web_file.PNG)
+
+![web_file](https://user-images.githubusercontent.com/34815693/232652644-72a20295-1c73-41b1-8dc5-042294a53b03.PNG)
+
 4. Uder the properties tab, Click on "Static website hosting" and choose "Use this bucket to host a website  after clicking the edit option. ![static](images\aws_images\static.PNG)
-Under the edit button, I indicated the landing page of my website which is the index.html file. I did not use an error file in this project hence was left blanl.
-![index](images\aws_images\index.PNG)
+Under the edit button, I indicated the landing page of my website which is the index.html file. I did not use an error file in this project hence was left blank.
+![index](https://user-images.githubusercontent.com/34815693/232652707-afb575e2-8dd2-4137-8552-68d40326e0e9.PNG)
+
+
 5. Under the permissions menu, public access is enabled for the backet.![public](images\aws_images\public.PNG)
  A bucket policy was then created. The policy is as witten bellow
  ```
@@ -61,10 +72,17 @@ Under the edit button, I indicated the landing page of my website which is the i
 }
 ```
 The object ownership was changed to ACLs enabled
-![acl](images\aws_images\acl.PNG)
+
+
+![acl](https://user-images.githubusercontent.com/34815693/232652741-e8c9a3c9-9934-4173-ba4b-c1b8ff612ce6.PNG)
+
+
 
 Access Control List was edited to suit the project as indicated below
-![acl_more](images\aws_images\Control.PNG)
+
+![Control](https://user-images.githubusercontent.com/34815693/232652819-e54265a6-e043-4bb5-91f3-ba2ec3f1b67e.PNG)
+
+
 
 The deafult website acess point is given as *http://qerbros.com.s3-website-us-east-1.amazonaws.com*
 
@@ -81,18 +99,30 @@ In this project however, the Domain name was bought from GoDaddy. Route 53 was u
 In configuring the Route 53, follow the steps stipulated below:
 
 1. Log in to your AWS account and navigate to the Route 53 console.
-![route53_dashboard](images\aws_images\reoute53.PNG)
+
+![reoute53](https://user-images.githubusercontent.com/34815693/232652873-5dd5fbf5-231a-4e1f-9729-878d82263ce3.PNG)
+
+
+
 
 2. Click on "Hosted Zones" in the left-hand menu and then click on the "Create Hosted Zone" button.
 3. Enter your domain name (qerbros.com) and click "Create Hosted Zone.". Ensure you select public zone since it will be assessible via the internet.
-![route53_dashboard](images\aws_images\hosted_zone.PNG)
+
+![hosted_zone](https://user-images.githubusercontent.com/34815693/232652910-e1c3826f-6d6f-4061-add6-7424a9f9f7ca.PNG)
+
+
+
 4. You will be redirected to the "Record Sets" tab. Click on "Create Record Set."
 
 5. Leave the name field blank, select "A - IPv4 address" for the type, and choose "Yes" for "Alias."
 6. In the "Alias Target" field, select your S3 bucket from the dropdown list.
 7. Click on "Create" to create the record set.
 
-![route53_dashboard](images\aws_images\arecord.PNG)
+![arecord](https://user-images.githubusercontent.com/34815693/232652964-898fa79a-7782-42b5-bf82-3f42c4ce7eed.PNG)
+
+
+
+
 
 8. Go back to your S3 bucket and click on the "Properties" tab.
 9. Click on "Static Website Hosting" and copy the Endpoint URL.
@@ -103,9 +133,20 @@ http://qerbros.com.s3-website-us-east-1.amazonaws.com
 10. Go back to the Route 53 console, click on "Create Record Set" again, and enter "www" for the name.
 11. Select "CNAME - Canonical name" for the type, and leave the "Alias" field as "No."
 12. In the "Value" field, paste the Endpoint URL of your S3 bucket (e.g. "my-bucket.s3-website-us-west-2.amazonaws.com"). 
-![route53_dashboard](images\aws_images\cname1.PNG)
+![cname1](https://user-images.githubusercontent.com/34815693/232653043-1d83595a-99a5-428e-b358-dfe9b35a1e1b.PNG)
+
+
+
+
+
+
 13. Click on "Create" to create the record set.
-![route53_dashboard](images\aws_images\records.PNG)
+
+![records](https://user-images.githubusercontent.com/34815693/232653085-aa89e25e-2fa4-48bb-afd0-6e5603f501d4.PNG)
+
+
+
+
 The above image containes all the records created for the hosted zone. Te NS (Name Server) record containes the name servers that will be doing the resolution. They are stated below:
 ```
 ns-873.awsdns-45.net.
@@ -115,10 +156,17 @@ ns-66.awsdns-08.com.
 ```
 
 Since my domain name was bought on Godaddy, I set these NS values in the GoDaddy NS settings as show below.
-![route53_dashboard](images\aws_images\godaddy.PNG)
+
+![godaddy](https://user-images.githubusercontent.com/34815693/232653167-a96f76ef-22d5-40b8-bfe4-72761f58a2f2.PNG)
+
+
 
 
 ## Video Demonstration Demonstration
+
+
+
+https://user-images.githubusercontent.com/34815693/232653245-0b3270ba-3a0e-41ab-9d78-3df0caaf42ad.mp4
 
 
 
