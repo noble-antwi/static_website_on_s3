@@ -39,7 +39,8 @@ This project will provide you with a step-by-step guide to creating and configur
 
 ## Setting up S3 bucket for hosting the static website
 A series of processes were caried out in setting up the S3 for this purpose.
-1. Log in to your AWS account and navigate to the S3 console. ![S3 Console](images\aws_images\s3_console.PNG)
+1. Log in to your AWS account and navigate to the S3 console. 
+![s3_console](https://user-images.githubusercontent.com/34815693/232654353-78aac826-97f3-49e7-bf2b-67e8d2edefc3.PNG)
 2. Click the "Create bucket" button and enter a unique name for your bucket, this case it is qerbros.com since the bucket name must match the domain name. 
 ![bucket_name](https://user-images.githubusercontent.com/34815693/232652616-c2cab426-277e-4d72-a11f-b80ff42c3db7.PNG)
 
@@ -50,12 +51,14 @@ In creating the bucket, all settings were left to be deafult. The region of choi
 
 ![web_file](https://user-images.githubusercontent.com/34815693/232652644-72a20295-1c73-41b1-8dc5-042294a53b03.PNG)
 
-4. Uder the properties tab, Click on "Static website hosting" and choose "Use this bucket to host a website  after clicking the edit option. ![static](images\aws_images\static.PNG)
+4. Uder the properties tab, Click on "Static website hosting" and choose "Use this bucket to host a website  after clicking the edit option. 
+![static](https://user-images.githubusercontent.com/34815693/232653861-a3310349-7976-4752-9cee-45437a90ca24.PNG)
+
 Under the edit button, I indicated the landing page of my website which is the index.html file. I did not use an error file in this project hence was left blank.
 ![index](https://user-images.githubusercontent.com/34815693/232652707-afb575e2-8dd2-4137-8552-68d40326e0e9.PNG)
+5. Under the permissions menu, public access is enabled for the backet.
+![public](https://user-images.githubusercontent.com/34815693/232654039-c6c641dc-e044-476c-a457-83058f8fabf2.PNG)
 
-
-5. Under the permissions menu, public access is enabled for the backet.![public](images\aws_images\public.PNG)
  A bucket policy was then created. The policy is as witten bellow
  ```
  {
@@ -99,17 +102,12 @@ In this project however, the Domain name was bought from GoDaddy. Route 53 was u
 In configuring the Route 53, follow the steps stipulated below:
 
 1. Log in to your AWS account and navigate to the Route 53 console.
-
 ![reoute53](https://user-images.githubusercontent.com/34815693/232652873-5dd5fbf5-231a-4e1f-9729-878d82263ce3.PNG)
-
-
-
 
 2. Click on "Hosted Zones" in the left-hand menu and then click on the "Create Hosted Zone" button.
 3. Enter your domain name (qerbros.com) and click "Create Hosted Zone.". Ensure you select public zone since it will be assessible via the internet.
 
 ![hosted_zone](https://user-images.githubusercontent.com/34815693/232652910-e1c3826f-6d6f-4061-add6-7424a9f9f7ca.PNG)
-
 
 
 4. You will be redirected to the "Record Sets" tab. Click on "Create Record Set."
