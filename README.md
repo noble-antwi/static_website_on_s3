@@ -1,5 +1,12 @@
 # HOSTING STATIC WEBSITE ON AWS SIMPLE STORAGE SERVICE (S3)
+
+## Architecture Diagram
+![Architecture](images\aws_images\architecture.PNG)
+[Click Here ](https://drive.google.com/file/d/1RThadyvBUDHQ9Iq3EfiYAybB2DizmtJi/view?usp=sharing) to have access to he architectural diagram
+
 ## Introduction
+
+
 Hosting a static website on the cloud has become a popular choice for many individuals and businesses today. It offers scalability, flexibility, and cost-effectiveness that traditional hosting options can't match. Amazon Web Services (AWS) provides an excellent platform for hosting static websites through its Simple Storage Service (S3).
 
 
@@ -112,7 +119,7 @@ Since my domain name was bought on Godaddy, I set these NS values in the GoDaddy
 
 ## Video Demonstration Demonstration
 
-[Project Demo](videos/project_demo.mp4)
+
 
 ## Conclusion
 In conclusion, hosting a static website on AWS using S3 and Route 53 is a cost-effective and scalable solution that can provide high availability, reliability, and performance. With S3, you can store and distribute your website content to users around the world with low latency and high throughput. With Route 53, you can manage your domain name system and route traffic to your web applications, providing a seamless user experience.
