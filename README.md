@@ -160,7 +160,7 @@ Since my domain name was bought on Godaddy, I set these NS values in the GoDaddy
 
 
 
-## Video Demonstration Demonstration
+## Video Demonstration
 
 
 
